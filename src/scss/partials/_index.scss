@@ -1,0 +1,9 @@
+#story-form {
+  width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  #story-form {
+    width: 50%;
+  }
+}
