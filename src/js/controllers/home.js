@@ -34,7 +34,7 @@ const Home = {
     if (isLoading) {
       const placeholderWrapper = document.createElement('section');
       placeholderWrapper.id = 'placeholder-wrapper';
-      placeholderWrapper.classList.add('row', 'gap-3');
+      placeholderWrapper.classList.add('row', 'gap-3', 'p-5');
       Array.from({ length: 4 }).forEach((_) => {
         const placeholder = document.createElement('story-card-placeholder');
         placeholder.classList.add('col');
