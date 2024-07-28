@@ -1,3 +1,4 @@
+
 const Home = {
   async init() {
     await this._initialData();

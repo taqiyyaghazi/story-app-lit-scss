@@ -1,4 +1,5 @@
 import { showToast } from '../utils/toast';
+
 const CreateStory = {
   init() {
     this._initialListener();

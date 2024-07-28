@@ -12,11 +12,15 @@ import * as bootstrap from 'bootstrap';
 import Home from './controllers/home';
 import CreateStory from './controllers/create-story';
 import Profile from './controllers/profile';
+import Login from './controllers/login';
+import Register from './controllers/register';
 
 const routes = {
   '/': Home,
   '/create-story.html': CreateStory,
   '/profile.html': Profile,
+  '/login.html': Login,
+  '/register.html': Register,
 };
 
 const detectRoute = () => routes[window.location.pathname];
