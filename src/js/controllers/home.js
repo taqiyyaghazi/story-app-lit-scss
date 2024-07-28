@@ -5,7 +5,7 @@ const Home = {
   async init() {
     this._user = LocalStorage.get('user');
     if (!this._user) {
-      window.location.href = '/';
+      window.location.href = '/login.html';
     }
     await this._initialData();
   },
