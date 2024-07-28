@@ -5,6 +5,7 @@ import './components/floating-button';
 import './components/story-card';
 import './components/toast';
 import './components/avatar';
+import './components/story-card-placeholder';
 
 // Import javascript file as needed
 import * as bootstrap from 'bootstrap';

@@ -19,7 +19,7 @@ const Register = {
           const password = document.getElementById('password').value;
 
           event.preventDefault();
-          await this.handleSubmit({ name, email, password });
+          await this._handleSubmit({ name, email, password });
 
           form.classList.add('was-validated');
         }
@@ -27,9 +27,9 @@ const Register = {
       false,
     );
   },
-  async handleSubmit(data) {
+  async _handleSubmit(data) {
     try {
-      this.setLoading(true);
+      this._setLoading(true);
       await api.post('/register', data);
       showToast({ title: 'Berhasil!', message: 'Selamat kamu berhasil daftar!' });
       setTimeout(() => {
@@ -38,10 +38,10 @@ const Register = {
     } catch (err) {
       showToast({ title: 'Gagal!', message: err.response.data.message });
     } finally {
-      this.setLoading(false);
+      this._setLoading(false);
     }
   },
-  setLoading(isLoading) {
+  _setLoading(isLoading) {
     const button = document.querySelector('button[type="submit"]');
     const spinner = document.getElementById('spinner');
 

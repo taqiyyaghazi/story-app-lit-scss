@@ -19,7 +19,7 @@ const Login = {
           const password = document.getElementById('password').value;
 
           event.preventDefault();
-          await this.handleSubmit({ email, password });
+          await this._handleSubmit({ email, password });
 
           form.classList.add('was-validated');
         }
@@ -27,9 +27,9 @@ const Login = {
       false,
     );
   },
-  async handleSubmit(data) {
+  async _handleSubmit(data) {
     try {
-      this.setLoading(true);
+      this._setLoading(true);
       const response = await api.post('/login', data);
       LocalStorage.set('user', JSON.stringify(response.data.loginResult));
       showToast({ title: 'Berhasil!', message: 'Selamat kamu berhasil masuk!' });
@@ -39,10 +39,11 @@ const Login = {
     } catch (err) {
       showToast({ title: 'Gagal!', message: err.response.data.message });
     } finally {
-      this.setLoading(false);
+      this._setLoading(false);
     }
   },
-  setLoading(isLoading) {
+
+  _setLoading(isLoading) {
     const button = document.querySelector('button[type="submit"]');
     const spinner = document.getElementById('spinner');
 
